@@ -32,6 +32,7 @@
             this.da = 0;
             this.tax = 0;
             this.salary = 0;
+            
         }
         //behavior
         SalaryCalculatorModel.prototype.calculate = function(){
@@ -44,16 +45,30 @@
         //View
         $(function(){ /* jquery will execute this function when the document is loaded */
             
-            var model = new SalaryCalculatorModel();
+            //for testing
+            window['model'] = new SalaryCalculatorModel();
+
+            //Reacting to User Actions
+            $('#txtBasic').change(function(){
+                model.basic = parseInt($(this).val());
+            });
+
+            $('#txtHra').change(function(){
+                model.hra = parseInt($(this).val());
+            });
+
+            $('#txtDa').change(function(){
+                model.da = parseInt($(this).val());
+            });
+
+            $('#rangeTax').change(function(){
+                model.tax = parseInt($(this).val());
+            });
+
             
             $('#btnCalculate').click(function(){
                 
                 model.calculate();
-
-                model.basic = parseInt($('#txtBasic').val());
-                model.hra = parseInt($('#txtHra').val());
-                model.da = parseInt($('#txtDa').val());
-                model.tax = parseInt($('#rangeTax').val());
 
                 $('#tdBasic').text(model.basic);
                 $('#tdHra').text(model.hra);
