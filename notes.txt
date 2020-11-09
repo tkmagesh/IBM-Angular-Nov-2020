@@ -1,0 +1,5 @@
+Rich Internet Applications (RIA)
+RIA using HTML + CSS + JS => SPA (Single Page Application)
+
+SPA + HTML5 Features => PWA (Progressing Web Application)
+
