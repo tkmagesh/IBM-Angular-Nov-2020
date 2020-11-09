@@ -3,3 +3,7 @@ RIA using HTML + CSS + JS => SPA (Single Page Application)
 
 SPA + HTML5 Features => PWA (Progressing Web Application)
 
+jQuery function
+
+
+1. Separation Of Concerns (Single Responsibility Principle - (SRP))
