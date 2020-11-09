@@ -48,12 +48,12 @@
             
             $('#btnCalculate').click(function(){
                 
-                model.calculate();
-
                 model.basic = parseInt($('#txtBasic').val());
                 model.hra = parseInt($('#txtHra').val());
                 model.da = parseInt($('#txtDa').val());
                 model.tax = parseInt($('#rangeTax').val());
+                
+                model.calculate();
 
                 $('#tdBasic').text(model.basic);
                 $('#tdHra').text(model.hra);
