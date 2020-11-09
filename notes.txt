@@ -7,3 +7,85 @@ jQuery function
 
 
 1. Separation Of Concerns (Single Responsibility Principle - (SRP))
+
+ES6 (ESNext, ECMAScript 6)
+1. let
+2. const
+3. Array destructuring
+4. Rest operator (Array)
+5. Spread operator (Array)
+6. Object destructuring
+7. Rest operator (Object)
+8. Spread operator (Object)
+9. Default arguments
+10. Arrow functions
+11. Template strings
+12. Classes
+
+https://es6-features.org/
+
+TypeScript
+    Typescript = JavaScript + Type Safety
+
+public static class Calculator{
+    public static int add(int x, int y){
+        return x + y;
+    }
+}
+
+
+function add(x, y){
+    return x + y;
+}
+
+add(10,20)
+add(10, '20')
+add(10, 'abc')
+add([10,20], [30,40])
+add([10,20],[30,[40,50]])
+add([10,20],[30,['40',50]])
+add([10,20],[30,['abc',50]])
+add(function(){ return [10,20]; }, function(){ return [30,['abc',50]]; })
+add([function(){ return [10,20]; }, function(){ return [30,['abc',50]]; }])
+add(10)
+add()
+add(10,20,30,40,50)
+
+function add(x,y){
+    if ( typef x !== 'number' || typef y !== 'number')
+        throw new Error('Invalid argument(s)!');
+    return x + y;
+}
+
+function add(...args){
+    function parseArg(n){
+        if (typeof n === 'function') return parseArg(n());
+        if (Array.isArray(n)) return add(...n);
+        return isNaN(n) ? 0 : parseInt(n);
+    }
+    return args.length <= 1 ? parseArg(args[0]) : parseArg(args[0]) + add(args.slice(1));
+}
+
+
+let x : number = 10;
+function add(x : number, y : number) : number {
+    return x + y;
+}
+
+add('abc',100)
+
+    |
+    | 
+    V
+    tsc
+    |
+    |
+    V
+
+let x = 10;
+function add(x, y) {
+    return x + y;
+}
+
+https://typescriptlang.org
+
