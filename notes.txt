@@ -129,4 +129,16 @@ Building Blocks of Angular
         Dependency Injection is taken care
         Minimum of 1 module should be there
         Application initialization starts with a module
-        
+
+
+Angular CLI
+To install
+    [sudo] npm install @angular/cli -g
+
+To create a new application
+    ng new first-app
+
+ES6 Modules
+    Everything defined in a JS/TS file is considered private
+    Public entities have to explicitly exported
+    Public entities from other JS/TS files have to explicitly imported to use them
