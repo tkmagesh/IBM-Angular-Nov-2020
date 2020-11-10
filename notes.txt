@@ -89,3 +89,32 @@ function add(x, y) {
 
 https://typescriptlang.org
 
+
+Building Blocks of Angular
+    1. Component
+        A resuable UI object
+        Encapsulates Presentation + UI Behavior + State
+            Presentation - How the data is displayed
+            UI Behavior - What need to happen when the user interact with the app
+            State - data
+        Components can be composed to create complex UI
+        Application = composition of components
+
+    2. Directive
+        Low level DOM manipulation
+            showing DOM nodes
+            removing DOM nodes
+            conditional display of DOM notes
+            adding / removing CSS classes to DOM nodes
+            manipulating styles for a DOM node
+        Attribute Directive
+            manipulates the attributes of existing DOM nodes
+            DOESN'T change the structure of the DOM tree
+                Means that it doesnt add/remove DOM nodes
+            is wrapped in []
+        Structural Directive
+            CHANGES the structure of the DOM tree by adding new DOM nodes or removing existing DOM nodes
+            prefixed with a *
+
+    
+
