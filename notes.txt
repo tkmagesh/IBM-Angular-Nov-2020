@@ -142,3 +142,24 @@ ES6 Modules
     Everything defined in a JS/TS file is considered private
     Public entities have to explicitly exported
     Public entities from other JS/TS files have to explicitly imported to use them
+
+
+Added :
+    src/app/greeter
+        greeter.component.ts
+        greeter.component.html
+        greeter.component.css
+
+updated :
+    src/app
+        app.module.ts
+
+    index.html
+
+$event
+    - event argument passed to the event handler
+    - contains information about the event
+        ex, which key is pressed (in a keyboard event)
+            x,y coordinates where the mouse is clicked (in a mouse event)
+
+    - 'target' attribute - has the reference to the dom node that triggered the event
