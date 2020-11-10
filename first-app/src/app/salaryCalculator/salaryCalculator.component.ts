@@ -2,15 +2,15 @@ import { Component } from "@angular/core";
 import { SalaryCalculatorModel } from './salaryCalculatorModel';
 
 @Component({
-    selector : 'app-salary-calculator',
-    templateUrl: './salaryCalculator.component.html',
-    styleUrls: ['./salaryCalculator.component.css']
+  selector: 'app-salary-calculator',
+  templateUrl: './salaryCalculator.component.html',
+  styleUrls: ['./salaryCalculator.component.css']
 })
-export class SalaryCalculatorComponent{
-    
-    model : SalaryCalculatorModel = new SalaryCalculatorModel();
+export class SalaryCalculatorComponent {
+  showResult : boolean = false;
+  model: SalaryCalculatorModel = new SalaryCalculatorModel();
 
-    /* onBasicChange(value){
+  /* onBasicChange(value){
         this.model.basic = value;
     } */
 }

@@ -22,7 +22,9 @@
         <input type="button" value="Calculate" (click)="model.calculate()">
     </div>
     <div class="field">
-        <table>
+        <span for="">Show Result : </span>
+        <input type="checkbox" (change)="showResult=$event.target.checked">
+        <table *ngIf="showResult">
             <tbody>
                 <tr>
                     <td id="tdBasic">{{model.basic}}</td>
