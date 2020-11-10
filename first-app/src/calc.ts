@@ -9,3 +9,4 @@ export function subtract(x : number, y : number) : number {
 const calculator = { add, subtract };
 
 export default calculator;
+
