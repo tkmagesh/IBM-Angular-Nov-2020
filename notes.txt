@@ -116,5 +116,17 @@ Building Blocks of Angular
             CHANGES the structure of the DOM tree by adding new DOM nodes or removing existing DOM nodes
             prefixed with a *
 
-    
+    3. Pipe
+        Used to transform the data for presentation purposes
+        Offer performance advantage
 
+    4. Service
+        Non UI logic of the application
+
+    5. Module
+        Organize the other building blocks
+        Registry of application entities
+        Dependency Injection is taken care
+        Minimum of 1 module should be there
+        Application initialization starts with a module
+        
