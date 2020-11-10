@@ -29,7 +29,9 @@
                     <td id="tdHra">{{model.hra}}</td>
                     <td id="tdDa">{{model.da}}</td>
                     <td id="tdTax">{{model.tax}}</td>
-                    <td id="tdSalary">{{model.salary}}</td>
+                    <td id="tdSalary"
+                        [ngClass]="{goodSalary : model.salary >= 10000, poorSalary : model.salary < 10000}"
+                    >{{model.salary}}</td>
                 </tr>
             </tbody>
         </table>
