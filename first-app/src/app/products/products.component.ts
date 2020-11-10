@@ -1,17 +1,10 @@
 import { Component } from "@angular/core";
+import { ProductsModel } from './ProductsModel';
 
 @Component({
     selector : 'app-products',
     templateUrl : './products.component.html'
 })
 export class ProductsComponent {
-    productNames : string[] = [ /* 'Scribble Pad', 'Marker', 'Stapler' */ ];
-
-    onAddClick(productName : string) {
-        this.productNames.push(productName);
-    }
-
-    onRemoveClick(productName : string){
-        this.productNames.splice(this.productNames.indexOf(productName), 1);
-    }
+    model: ProductsModel = new ProductsModel();
 }

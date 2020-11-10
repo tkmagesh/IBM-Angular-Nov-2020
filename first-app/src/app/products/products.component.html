@@ -2,11 +2,14 @@
 <hr>
 <label for="">Product Name :</label>
 <input type="text" #txtProductName>
-<input type="button" value="Add" (click)="onAddClick(txtProductName.value)">
+<input type="button" value="Add" (click)="model.addNew(txtProductName.value)">
 <ol>
-    <li *ngFor="let productName of productNames">
+    <li *ngFor="let productName of model.list">
         <span> {{productName}} </span>
-        <input type="button" value="Remove" (click)="onRemoveClick(productName)" />
+        <input type="button" 
+        value="Remove" 
+        (click)="model.remove(productName)" />
     </li>
     
 </ol>
+<span>{{model.list}}</span>

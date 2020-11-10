@@ -163,3 +163,6 @@ $event
             x,y coordinates where the mouse is clicked (in a mouse event)
 
     - 'target' attribute - has the reference to the dom node that triggered the event
+
+
+ng new bug-tracker-app
