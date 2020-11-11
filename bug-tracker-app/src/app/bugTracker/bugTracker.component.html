@@ -14,21 +14,21 @@
 </section>
 <section class="edit">
     <label for="">Bug Name :</label>
-    <input type="text" name="" id="">
-    <input type="button" value="Add New">
+    <input type="text" #txtNewBugName>
+    <input type="button" value="Add New" (click)="onAddNewClick(txtNewBugName.value)">
 </section>
 <section class="list">
     <ol>
-        <li>
-            <span class="bugname">[This is bug - 1]</span>
+        <li *ngFor="let bug of bugList">
+            <span class="bugname">{{bug | json}}</span>
             <div class="datetime">[created at]</div>
             <input type="button" value="Remove">
         </li>
-        <li>
+        <!-- <li>
             <span class="bugname closed">[This is bug - 2]</span>
             <div class="datetime">[created at]</div>
             <input type="button" value="Remove">
-        </li>
+        </li> -->
     </ol>
     <input type="button" value="Remove Closed">
 </section>
