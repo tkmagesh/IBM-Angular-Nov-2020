@@ -22,7 +22,7 @@ export class SalaryCalculatorComponent {
   */
 
   // a simplified version of the above is :
-  constructor(private model: SalaryCalculatorModel) {
+  constructor(public model: SalaryCalculatorModel) {
     
   }
 
