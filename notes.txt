@@ -122,6 +122,7 @@ Building Blocks of Angular
 
     4. Service
         Non UI logic of the application
+        Services are singleton within a module (by default)
 
     5. Module
         Organize the other building blocks

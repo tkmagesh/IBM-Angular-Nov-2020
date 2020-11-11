@@ -6,6 +6,8 @@ import { GreeterComponent } from './greeter/greeter.component';
 import { SalaryCalculatorComponent } from './salaryCalculator/salaryCalculator.component';
 import { ProductsComponent } from './products/products.component';
 
+import {SalaryCalculatorModel} from './salaryCalculator/salaryCalculatorModel';
+
 /* Decorator - associate meta data information with a type */
 @NgModule({
   declarations: [
@@ -21,12 +23,13 @@ import { ProductsComponent } from './products/products.component';
   ],
   providers: [
     /* register the services */
+    SalaryCalculatorModel
   ],
   bootstrap: [
     /* top most components that you use in the index.html file */
-    //AppComponent
+    AppComponent,
     GreeterComponent,
-    SalaryCalculatorComponent,
+    /* SalaryCalculatorComponent, */
     ProductsComponent
   ]
 })
