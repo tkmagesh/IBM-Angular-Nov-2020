@@ -33,9 +33,10 @@
                     <td id="tdTax">{{model.tax}}</td>
                     <td id="tdSalary"
                         [ngClass]="{goodSalary : model.salary >= 10000, poorSalary : model.salary < 10000}"
-                    >{{model.salary}}</td>
+                    >{{model.salary | currency:'INR'}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <span>{{model | json}}</span>
 </section>
