@@ -1,7 +1,7 @@
 <section class="stats">
-    <span class="closed">1</span>
+    <span class="closed">{{ getClosedCount() }}</span>
     <span> / </span>
-    <span>2</span>
+    <span>{{bugList.length}}</span>
 </section>
 <section class="sort">
     <label for="">Order By :</label>
@@ -20,9 +20,12 @@
 <section class="list">
     <ol>
         <li *ngFor="let bug of bugList">
-            <span class="bugname">{{bug | json}}</span>
+            <span class="bugname"
+                [ngClass]="{closed : bug.isClosed}"
+                (click)="onBugNameClick(bug)"
+            >{{bug | json}}</span>
             <div class="datetime">[created at]</div>
-            <input type="button" value="Remove">
+            <input type="button" value="Remove" (click)="onRemoveClick(bug)">
         </li>
         <!-- <li>
             <span class="bugname closed">[This is bug - 2]</span>
@@ -30,5 +33,5 @@
             <input type="button" value="Remove">
         </li> -->
     </ol>
-    <input type="button" value="Remove Closed">
+    <input type="button" value="Remove Closed" (click)="onRemoveClosedClick()">
 </section>

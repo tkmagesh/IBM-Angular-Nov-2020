@@ -19,4 +19,20 @@ export class BugTrackerComponent{
 
         this.bugList.push(newBug);
     }
+
+    onBugNameClick(bugToToggle){
+        bugToToggle.isClosed = !bugToToggle.isClosed;
+    }
+
+    onRemoveClick(bugToRemove){
+        this.bugList.splice(this.bugList.indexOf(bugToRemove), 1);
+    }
+
+    onRemoveClosedClick(){
+        this.bugList = this.bugList.filter(bug => !bug.isClosed);
+    }
+
+    getClosedCount(){
+        return this.bugList.reduce((closedCount, bug) => bug.isClosed ? closedCount + 1 : closedCount, 0);
+    }
 }
