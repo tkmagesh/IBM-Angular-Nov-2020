@@ -1,5 +1,5 @@
 <section class="stats">
-    <span class="closed">{{ getClosedCount() }}</span>
+    <span class="closed">{{ bugList | closedCount }}</span>
     <span> / </span>
     <span>{{bugList.length}}</span>
 </section>
