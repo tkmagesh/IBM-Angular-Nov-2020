@@ -167,3 +167,49 @@ $event
 
 
 ng new bug-tracker-app
+
+pure functions
+    functions with no side effects
+    the output doesnt change for the given inputs
+    the function invocation can be replaced with the 
+        result of the function without affecting the outcome
+
+function add(x,y){
+    return x + y;
+}
+
+memoization
+    memorizing the result of a function
+
+
+
+function addClient(){
+    var result = add(10,20);
+    console.log('result = ', result);
+}
+
+function memoize(fn){
+    const cache = {};
+    return function(...args){
+        const key = JSON.stringify(args);
+        if (!cache.hasOwnProperty(key))
+            cache[key] = fn(...args);
+        return cache[key];
+    }
+}
+
+function memoize(fn){
+    let oldKey = undefined,
+        oldResult = undefined;
+    return function(...args){
+        const key = JSON.stringify(args);
+        if (key !== oldKey){
+            oldKey = key;
+            oldResult = fn(...args);
+        }
+        return oldResult;
+    }
+
+}
+
+

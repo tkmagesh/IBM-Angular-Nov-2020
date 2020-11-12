@@ -8,10 +8,10 @@ import { BugOperationsService } from './services/bugOperations.service';
 })
 export class BugTrackerComponent {
   bugList: Bug[] = [];
-
+  newBugName :string = '';
   sortAttrName: string = '';
   sortByDesc: boolean = false;
-  
+
   constructor(private bugOperations: BugOperationsService) {
     this.bugList.push({
       id: 3,
@@ -39,13 +39,15 @@ export class BugTrackerComponent {
     });
   }
 
-  onAddNewClick(newBugName: string) {
-    const newBug = this.bugOperations.createNew(newBugName);
-    this.bugList.push(newBug);
+  onAddNewClick() {
+    const newBug = this.bugOperations.createNew(this.newBugName);
+    //this.bugList.push(newBug);
+    this.bugList = [...this.bugList, newBug];
   }
 
   onBugNameClick(bugToToggle: Bug) {
-    this.bugOperations.toggle(bugToToggle);
+    const toggledBug = this.bugOperations.toggle(bugToToggle);
+    this.bugList = this.bugList.map(bug => bug === bugToToggle ? toggledBug : bug);
   }
 
   onRemoveClick(bugToRemove) {
