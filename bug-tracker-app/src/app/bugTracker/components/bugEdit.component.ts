@@ -23,6 +23,7 @@ export class BugEditComponent {
   constructor(private bugOperations : BugOperationsService){
       
   }
+  
   onAddNewClick() {
     const newBug = this.bugOperations.createNew(this.newBugName);
     //this.bugList.push(newBug);
