@@ -13,7 +13,7 @@ export class BugTrackerComponent {
   sortByDesc: boolean = false;
 
   constructor(private bugOperations: BugOperationsService) {
-    this.bugList.push({
+    /* this.bugList.push({
       id: 3,
       name: 'Server communication failure',
       isClosed: false,
@@ -36,7 +36,7 @@ export class BugTrackerComponent {
       name: 'Application not responding',
       isClosed: false,
       createdAt: new Date()
-    });
+    }); */
   }
 
   onAddNewClick() {

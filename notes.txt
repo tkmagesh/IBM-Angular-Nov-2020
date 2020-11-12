@@ -213,3 +213,20 @@ function memoize(fn){
 }
 
 
+localStorage is a storage api in the browser
+window.localStorage
+====================
+    - key/value store
+    - key has to be unique
+    - key & value must be strings
+        use JSON.stringify & JSON.parse for serialization & deserialization
+    - ~10 MB storage limit per origin 
+    - Same Origin Policy
+    - apis
+    -------
+        * setItem(key, value)
+        * getItem(key) => value
+        * removeItem(key)
+        * clear()
+        * key(index) => key @ index
+        * length => number of items in the storage
