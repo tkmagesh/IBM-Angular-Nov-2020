@@ -37,6 +37,8 @@ export class BugTrackerComponent {
       isClosed: false,
       createdAt: new Date()
     }); */
+
+    this.bugList = this.bugOperations.getAll();
   }
 
   onAddNewClick() {
@@ -51,10 +53,13 @@ export class BugTrackerComponent {
   }
 
   onRemoveClick(bugToRemove) {
-    this.bugList.splice(this.bugList.indexOf(bugToRemove), 1);
+    this.bugOperations.remove(bugToRemove);
+    this.bugList = this.bugList.filter(bug => bug.id !== bugToRemove.id);
   }
 
   onRemoveClosedClick() {
-    this.bugList = this.bugList.filter(bug => !bug.isClosed);
+     this.bugList
+      .filter(bug => bug.isClosed)
+      .forEach(closedBug => this.onRemoveClick(closedBug));
   }
 }
