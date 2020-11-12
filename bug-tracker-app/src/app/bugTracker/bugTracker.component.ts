@@ -8,27 +8,25 @@ import { BugOperationsService } from './services/bugOperations.service';
 })
 export class BugTrackerComponent implements OnInit {
   bugList: Bug[] = [];
-  newBugName :string = '';
+
   sortAttrName: string = '';
   sortByDesc: boolean = false;
 
-  constructor(private bugOperations: BugOperationsService) {
-    
-  }
+  constructor(private bugOperations: BugOperationsService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.bugList = this.bugOperations.getAll();
   }
 
-  onAddNewClick() {
-    const newBug = this.bugOperations.createNew(this.newBugName);
-    //this.bugList.push(newBug);
+  onNewBugCreated(newBug : Bug){
     this.bugList = [...this.bugList, newBug];
   }
 
   onBugNameClick(bugToToggle: Bug) {
     const toggledBug = this.bugOperations.toggle(bugToToggle);
-    this.bugList = this.bugList.map(bug => bug === bugToToggle ? toggledBug : bug);
+    this.bugList = this.bugList.map(bug =>
+      bug === bugToToggle ? toggledBug : bug
+    );
   }
 
   onRemoveClick(bugToRemove) {
@@ -37,7 +35,7 @@ export class BugTrackerComponent implements OnInit {
   }
 
   onRemoveClosedClick() {
-     this.bugList
+    this.bugList
       .filter(bug => bug.isClosed)
       .forEach(closedBug => this.onRemoveClick(closedBug));
   }
