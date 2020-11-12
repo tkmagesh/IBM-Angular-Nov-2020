@@ -11,6 +11,9 @@ import { TrimTextPipe } from './bugTracker/pipes/trimText.pipe';
 import { SortPipe } from './bugTracker/pipes/sort.pipe';
 import { ElapsedPipe } from './bugTracker/pipes/elapsed.pipe'
 import { ClosedCountPipe } from './bugTracker/pipes/closedCount.pipe';
+
+import { BugStatsComponent } from './bugTracker/components/bugStats.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,8 @@ import { ClosedCountPipe } from './bugTracker/pipes/closedCount.pipe';
     ClosedCountPipe,
     TrimTextPipe,
     SortPipe,
-    ElapsedPipe
+    ElapsedPipe,
+    BugStatsComponent
   ],
   imports: [BrowserModule],
   providers: [BugOperationsService, BugStorageService],
