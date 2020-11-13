@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  serviceEndPoint: 'http://localhost:3000/bugs'
+  serviceEndPoint: 'http://localhost:3000/bugs',
+  x : 100
 };

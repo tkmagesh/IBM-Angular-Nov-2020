@@ -310,3 +310,28 @@ map
 reduce
 forEach
 filter
+
+Routing
+Route
+    encapsulates the URL and the respective component
+    routegaurd
+        canActivate
+
+
+Deployment
+    1. Typescript compilation
+    2. minification of JS
+    3. uglification of JS
+    4. bundle the JS
+    5. version the JS 
+    6. JS file references to be updated in the index.html
+    7. minification of CSS
+    8. bundle the CSS
+    9. version the CSS
+    10. updated the CSS reference in the index.html
+    11. copy the generated files to the build folder
+
+    webpack (bundler)
+
+command 
+ng build --prod
