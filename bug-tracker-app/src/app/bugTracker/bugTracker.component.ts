@@ -19,7 +19,11 @@ export class BugTrackerComponent implements OnInit {
   }
 
   onNewBugCreated(newBug : Bug){
-    this.bugList = [...this.bugList, newBug];
+    //immutable
+    //this.bugList = [...this.bugList, newBug];
+
+    //mutable
+    this.bugList.push(newBug);
   }
 
   onBugNameClick(bugToToggle: Bug) {

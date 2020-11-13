@@ -230,3 +230,7 @@ window.localStorage
         * clear()
         * key(index) => key @ index
         * length => number of items in the storage
+
+State Change
+    1. User Interaction
+    2. Timer events
