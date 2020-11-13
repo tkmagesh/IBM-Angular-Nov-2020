@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Bug } from './models/Bug'
 import { BugOperationsService } from './services/bugOperations.service';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-bug-tracker',
@@ -12,9 +13,11 @@ export class BugTrackerComponent implements OnInit {
   sortAttrName: string = '';
   sortByDesc: boolean = false;
 
-  constructor(private bugOperations: BugOperationsService) {}
+  constructor(private bugOperations: BugOperationsService, 
+    private http : HttpClient ) {}
 
   ngOnInit() {
+    window['http'] = this.http;
     this.bugList = this.bugOperations.getAll();
   }
 

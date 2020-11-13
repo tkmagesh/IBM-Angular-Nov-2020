@@ -242,3 +242,71 @@ Model View Synchronization
 
 json-server
     A npm module designed to expose the data in a JSON file as restful services
+
+Asynchronous Programming
+    
+    Asynchronous Operation
+        An operation that you initiate but dont wait for its completion
+
+    1. callbacks
+    2. events (EventEmitter)
+    3. promises
+    4. async await
+    5. ES6 generators
+    
+    6. observables
+
+
+Observable 
+    Observable is an inverse of Enumrable (generators)
+        Enumerable = iterator + lazy evaluation
+
+Iterator
+    Design Pattern
+    To iterate over a collection
+
+var nos = [3,5,2,1,4]
+
+for(var idx = 0, count = nos.length; idx < count; idx++){
+    var no = nos[idx]
+}
+
+
+3000 resumes
+30 developers
+300 candidates
+
+1. min of 5 years
+2. engineering graduate
+3. from bangalore
+
+
+function filterExperiance(resumes[3000]){
+    let result = [];
+    for(let resume of resumes){
+        if (resume.exp === '5 years')
+            result.push(resume);
+    }
+    return result;
+}
+
+function * filterEngGraduates(fiveYrsExpGraduatesGen){
+    var gen = fiveYrsExpGraduatesGen();
+    var result = gen.next();
+    while(!result.done ){
+        yield result;
+        result = gen.next();
+    }
+}
+
+Enumerable = collection that already has the data
+Observable = collection that WILL GET the data in future one after another across a time line
+    = Events
+
+rx.net (reactive extensions)
+    = apis that allows you to process events like data
+
+map
+reduce
+forEach
+filter
