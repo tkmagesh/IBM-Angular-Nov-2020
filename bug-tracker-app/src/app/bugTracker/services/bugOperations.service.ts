@@ -1,3 +1,22 @@
+import { Bug } from '../models/Bug';
+import { BugApiService } from './bugApi.service';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class BugOperationsService{
+    constructor(private bugApi : BugApiService){
+
+    }
+
+    getAll() : Observable<Bug[]>{
+        return this.bugApi.getAll();
+    }
+}
+
+
+//Using the BugStorageService
+/* 
 import { Bug } from "../models/Bug";
 import { BugStorageService } from './bugStorage.service';
 import { Injectable } from '@angular/core';
@@ -31,4 +50,4 @@ export class BugOperationsService {
     getAll() : Bug[]{
         return this.bugStorage.getAll();
     }
-}
+} */

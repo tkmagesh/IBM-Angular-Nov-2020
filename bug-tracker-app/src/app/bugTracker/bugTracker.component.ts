@@ -1,7 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { Bug } from './models/Bug'
+import { Component, OnInit } from '@angular/core';
+import { Bug } from './models/Bug';
 import { BugOperationsService } from './services/bugOperations.service';
-import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-bug-tracker',
@@ -13,20 +12,62 @@ export class BugTrackerComponent implements OnInit {
   sortAttrName: string = '';
   sortByDesc: boolean = false;
 
-  constructor(private bugOperations: BugOperationsService, 
-    private http : HttpClient ) {}
+  constructor(private bugOperations: BugOperationsService) {}
 
   ngOnInit() {
-    window['http'] = this.http;
+    const allBugs$ = this.bugOperations.getAll();
+    allBugs$.subscribe(bugs => this.bugList = bugs);
+  }
+
+  onNewBugCreated(newBug: Bug) {
+    this.bugList = [...this.bugList, newBug];
+  }
+
+  onBugNameClick(bugToToggle: Bug) {
+    /* const toggledBug = this.bugOperations.toggle(bugToToggle);
+    this.bugList = this.bugList.map(bug =>
+      bug === bugToToggle ? toggledBug : bug
+    ); */
+  }
+
+  onRemoveClick(bugToRemove) {
+    //this.bugOperations.remove(bugToRemove);
+    this.bugList = this.bugList.filter(bug => bug.id !== bugToRemove.id);
+  }
+
+  onRemoveClosedClick() {
+    this.bugList
+      .filter(bug => bug.isClosed)
+      .forEach(closedBug => this.onRemoveClick(closedBug));
+  }
+}
+
+
+
+//using the sync version of BugOperationsService
+
+/* import { Component, OnInit } from "@angular/core";
+import { Bug } from './models/Bug'
+import { BugOperationsService } from './services/bugOperations.service';
+
+@Component({
+  selector: 'app-bug-tracker',
+  templateUrl: './bugTracker.component.html'
+})
+export class BugTrackerComponent implements OnInit {
+  bugList: Bug[] = [];
+
+  sortAttrName: string = '';
+  sortByDesc: boolean = false;
+
+  constructor(private bugOperations: BugOperationsService) {}
+
+  ngOnInit() {
     this.bugList = this.bugOperations.getAll();
   }
 
   onNewBugCreated(newBug : Bug){
-    //immutable
-    //this.bugList = [...this.bugList, newBug];
-
-    //mutable
-    this.bugList.push(newBug);
+    this.bugList = [...this.bugList, newBug];
   }
 
   onBugNameClick(bugToToggle: Bug) {
@@ -46,4 +87,4 @@ export class BugTrackerComponent implements OnInit {
       .filter(bug => bug.isClosed)
       .forEach(closedBug => this.onRemoveClick(closedBug));
   }
-}
+} */

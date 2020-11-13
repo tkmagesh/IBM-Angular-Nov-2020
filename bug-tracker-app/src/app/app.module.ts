@@ -7,7 +7,7 @@ import { BugTrackerComponent } from './bugTracker/bugTracker.component'
 
 import { BugOperationsService } from './bugTracker/services/bugOperations.service';
 import { BugStorageService } from './bugTracker/services/bugStorage.service';
-
+import { BugApiService } from './bugTracker/services/bugApi.service';
 
 import { ClosedCountPipe } from './bugTracker/pipes/closedCount.pipe';
 
@@ -25,7 +25,7 @@ import { UtilsModule } from './utils/utils.module';
     BugEditComponent
   ],
   imports: [BrowserModule, UtilsModule, HttpClientModule],
-  providers: [BugOperationsService, BugStorageService],
+  providers: [BugOperationsService, BugStorageService, BugApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
