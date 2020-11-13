@@ -15,4 +15,20 @@ export class BugApiService {
     getAll() : Observable<Bug[]>{
         return this.http.get<Bug[]>(this.serviceEndpoint);
     }
+
+    getById(id) : Observable<Bug>{
+        return this.http.get<Bug>(`${this.serviceEndpoint}/${id}`);
+    }
+
+    save(bugData : Bug) : Observable<Bug>{
+        if (bugData.id === 0){
+            return this.http.post<Bug>(this.serviceEndpoint, bugData);
+        } else {
+            return this.http.put<Bug>(`${this.serviceEndpoint}/${bugData.id}`, bugData);
+        }
+    } 
+
+    remove(bugData : Bug) : Observable<any>{
+        return this.http.delete<Bug>(`${this.serviceEndpoint}/${bugData.id}`);
+    }
 }
