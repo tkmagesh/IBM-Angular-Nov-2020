@@ -234,3 +234,11 @@ window.localStorage
 State Change
     1. User Interaction
     2. Timer events
+    3. XHR events (AJAX)
+
+Model View Synchronization
+    - Whenever the model is changing the view is AUTOMATICALLY updated accordingly
+
+
+json-server
+    A npm module designed to expose the data in a JSON file as restful services

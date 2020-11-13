@@ -1,0 +1,42 @@
+{
+  "bugs": [
+    {
+      "id": 1,
+      "name": "Server communication failure",
+      "isClosed": true,
+      "createdAt": "2020-09-12T09:41:38.907Z"
+    },
+    {
+      "id": 2,
+      "name": "Data integrity checks failed",
+      "isClosed": false,
+      "createdAt": "2020-09-12T09:41:53.136Z"
+    },
+    {
+      "id": 3,
+      "name": "User actions not recognized",
+      "isClosed": false,
+      "createdAt": "2020-09-12T09:41:59.460Z"
+    },
+    {
+      "id": 4,
+      "name": "Application not responding",
+      "isClosed": false,
+      "createdAt": "2020-09-12T09:42:08.053Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Payroll Master"
+    },
+    {
+      "id": 2,
+      "name": "Expense Manager"
+    },
+    {
+      "id": 3,
+      "name": "Test Manager"
+    }
+  ]
+}
